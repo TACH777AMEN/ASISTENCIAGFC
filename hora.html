@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas con Tres Turnos y Fecha Actual</title>
+</head>
+<body>
+    <h1>ASISTENCIA</h1>
+    <p>Fecha actual: <span id="fecha"></span></p>
+    <p>Turno: <span id="turno"></span></p>
+    <ul id="lista">
+        <li><input type="checkbox" id="tarea1"> Tarea 1</li>
+        <li><input type="checkbox" id="tarea2"> Tarea 2</li>
+        <li><input type="checkbox" id="tarea3"> Tarea 3</li>
+        <!-- Agrega más elementos aquí -->
+    </ul>
+
+    <script>
+        // Función para obtener la fecha actual en el formato deseado (por ejemplo, DD/MM/AAAA)
+        function obtenerFecha() {
+            const fecha = new Date();
+            const dia = fecha.getDate().toString().padStart(2, '0');
+            const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+            const año = fecha.getFullYear();
+            return `${dia}/${mes}/${año}`;
+        }
+
+        // Función para determinar el turno (mañana, tarde o noche)
+        function determinarTurno() {
+            const hora = new Date().getHours();
+            const turnoElemento = document.getElementById('turno');
+            if (hora >= 0 && hora < 9) {
+                turnoElemento.textContent = 'Turno Mañana';
+            } else if (hora >= 9 && hora < 17) {
+                turnoElemento.textContent = 'Turno Tarde';
+            } else if (hora >= 17 && hora <= 23) {
+                turnoElemento.textContent = 'Turno Noche';
+            }
+        }
+
+        // Llamar a las funciones para mostrar la fecha y determinar el turno al cargar la página
+        mostrarFecha(); // Llama a la función mostrarFecha
+        determinarTurno(); // Llama a la función determinarTurno
+
+        // Actualizar la fecha y el turno automáticamente cada minuto
+        setInterval(function() {
+            mostrarFecha();
+            determinarTurno();
+        }, 1000 * 60);
+    </script>
+</body>
+</html>
