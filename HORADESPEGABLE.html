@@ -69,8 +69,8 @@
             fechaHoraElement.textContent = fechaHora.toLocaleDateString('es-ES', opcionesFechaHora);
         }
 
-        // Función para actualizar la fecha y hora cada segundo
-        setInterval(mostrarFechaHora, 1000);
+        // Llamar a la función para mostrar la fecha y hora actual al cargar la página
+        mostrarFechaHora();
 
         var zonaSelect = document.getElementById("zona");
         var mananaButton = document.getElementById("manana");
@@ -232,15 +232,7 @@
         });
 
         // Agregar un evento de clic al botón "Registrar"
-        registrarButton.addEventListener("click", function () {
-            var confirmacion = window.confirm("¿Desea enviar la información?");
-            if (confirmacion) {
-                registrarInformacion();
-                alert("La información ha sido enviada.");
-            } else {
-                alert("La información no ha sido enviada.");
-            }
-        });
+        registrarButton.addEventListener("click", registrarInformacion);
     </script>
 </body>
 </html>
