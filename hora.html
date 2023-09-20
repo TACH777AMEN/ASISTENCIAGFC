@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Asistencia</title>
+    <link rel="stylesheet" href="estilos.css">
+
     <style>
         /* Estilo para agregar margen superior al div de los botones */
         #botones {
@@ -28,9 +30,17 @@
             background-color: #00ccff; /* Cambiar a color celeste cuando se hace clic */
         }
     </style>
+    
+
 </head>
 <body>
-    <h1>ASISTENCIA</h1>
+    
+    <ul class="navbar">
+        <li><a href="hora.html">Inicio</a></li>
+        <li><a href="admin.html">Administrador</a></li> <!-- Enlace a la página de administrador -->
+    </ul>
+
+    <h1>ASISTENCIA DEL PERSONAL</h1>
     <p id="fechaHora"></p>
     <label for="zona">Selecciona una Zona:</label>
     <select id="zona">
@@ -83,7 +93,8 @@
         // Datos de ejemplo para las listas de asistentes
         var asistentesPorZonaYTurno = {
             DELTA: {
-                manana: ["Huaringa Lagomarcino Leonardo", "XXX", "QQQ", "WWW", "RRR", "TTT", "HHH"],
+                manana: ["HUARINGA LAGOMARCINO LEONARDO", "CAHUANA CASTILLO CESAR", "CABALLERO LEON JUAN", "CAYETANO REGALADO LADY", "DE LA ROSA AGUILAR LEONEL", "FIGUEROA YEPEZ CRISTINA ", "LAVERA TRAVERSO ANA", "MANZO VALENCIA ROSARIO ", "MARTINEZ RUIZ IRIANA ", "MICHELOT NARVAEZ LUIS", "NOLE ESPINOZA LIZ", "ORTIZ MELGAREJO DARWIN ", "ORTIZ SANCHEZ JAVIER", "PAZ ESPINO VANESSA ", "PINEDA SANCHEZ ROGER ", "RISSO MINAYA RICARDO", "RAMOS YAICATE JOSE MANUEL", "REYES FELIX DANIEL", "RONCAL SANTOS ALBERTO", "SALGUERO VERA MIGUEL ", "ALAN COELO PALOMINO", "SUSAN CARBONE FAILOC", "SHEYLA SURICHAQUI CARMONA",  "EDUARDO AMAR", "CARLOS ALZA", "Cesar Fernandez"
+, "Juana Aguirre"],
                 tarde: ["Cahuana Castillo Cesar"],
                 noche: ["Caballero Leon Juan"]
             },

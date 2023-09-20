@@ -1,0 +1,184 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #009966;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el contenido en el contenedor */
+}
+
+
+/* Estilos para el encabezado de la página */
+#fechaHora {
+    text-align: right;
+    color: #009966;
+}
+
+/* Estilos para el formulario de selección */
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+/* Estilos para los botones */
+#botones {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #5fbdd4; /* Color de fondo inicial */
+    color: white;
+    font-size: 16px;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al cambiar colores */
+}
+
+button:hover {
+    background-color: #009966; /* Cambia a color celeste al hacer hover */
+    color: #fff; /* Color de texto al pasar el cursor sobre el botón */
+}
+
+/* Estilo para los botones seleccionados */
+button.seleccionado {
+    background-color: #009966; /* Cambia a otro color (azul claro) cuando se seleccionan */
+}
+
+/* Estilos para la lista de asistentes */
+#listaAsistentes {
+    display: none;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #009966;
+}
+
+ul#asistentes {
+    list-style-type: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+ul#asistentes li {
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 5%;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 5%;
+}
+
+/* Estilos para el botón Registrar */
+#registrar {
+    display: block;
+    margin: 20px auto;
+    background-color: #009966;
+    border-width: 2px;
+}
+
+#registrar:hover {
+    background-color: #00ccff;
+}
+/* Estilos para la selección de zona */
+label[for="zona"] {
+    display: inline-block;
+    width: 30%; /* Ajusta el ancho al 30% del contenedor para dejar espacio a la derecha */
+    text-align: right; /* Alinea el texto a la derecha */
+    margin-right: 10px; /* Agrega un margen a la derecha para separar la etiqueta del desplegable */
+}
+
+#zona {
+    width: 30%; /* Ajusta el ancho al 60% del contenedor para que ocupe el espacio restante */
+}
+
+
+/* Estilos para el desplegable de cada nombre */
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+select {
+    width: 14%; /* Ajusta el ancho al 20% del contenedor li */
+    margin-left: 10px; /* Agrega un margen a la izquierda para separar el select del nombre */
+    font-size: 12px;
+}
+
+/* Estilos para el contenedor de la fecha y hora */
+#fechaHora {
+    font-size: 12px; /* Tamaño de fuente */
+    color: #333; /* Color del texto (gris oscuro) */
+    font-weight: bold; /* Negrita */
+    margin-top: 10px; /* Margen superior */
+    text-align: right; /* Alinear al centro */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+}
+
+/* Estilo para el fondo de la página */
+body {
+    background-color: #ccd0d1; /* Cambia el color de fondo según tu preferencia */
+}
+
+/* Estilo para la lista de asistentes */
+ul#asistentes {
+    columns: 3; /* Divide la lista en tres columnas */
+    -webkit-columns: 3; /* Para navegadores basados en WebKit */
+    -moz-columns: 3; /* Para navegadores basados en Gecko (Firefox) */
+    list-style-type: none; /* Quita los puntos de lista */
+    padding: 0;
+}
+
+/* Estilo para los elementos de la lista */
+ul#asistentes li {
+    display: list-item;
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    break-inside: avoid; /* Evita que los elementos se rompan en medio de las columnas */
+}
+
+/* Agregar margen alrededor de la página */
+body {
+    margin: 25px; /* Puedes ajustar el valor según tus preferencias */
+}
