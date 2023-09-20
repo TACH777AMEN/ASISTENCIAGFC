@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Asistencia</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Dashboard de Asistencia</h1>
+
+    <!-- Agrega un elemento div donde mostrarás los datos del dashboard -->
+    <div id="dashboard"></div>
+
+    <script>
+        // Función para cargar y mostrar los datos de asistencia desde el LocalStorage
+        function mostrarDatosAsistencia() {
+            // Obtener los datos de asistencia almacenados en el LocalStorage
+            var asistenciaGuardada = JSON.parse(localStorage.getItem('asistencia'));
+
+            // Verificar si hay datos de asistencia disponibles
+            if (asistenciaGuardada) {
+                // Crear una tabla para mostrar los datos
+                var tabla = document.createElement('table');
+                tabla.border = '1';
+                tabla.cellSpacing = '0';
+                tabla.cellPadding = '5';
+
+                // Crear encabezados de tabla
+                var encabezados = ['Zona', 'Turno', 'Nombre', 'Estado'];
+                var encabezadosRow = tabla.insertRow();
+                encabezados.forEach(function (encabezado) {
+                    var th = document.createElement('th');
+                    th.textContent = encabezado;
+                    encabezadosRow.appendChild(th);
+                });
+
+                // Recorrer los datos de asistencia y agregar filas a la tabla
+                for (var zona in asistenciaGuardada) {
+                    for (var turno in asistenciaGuardada[zona]) {
+                        asistenciaGuardada[zona][turno].forEach(function (registro) {
+                            var fila = tabla.insertRow();
+                            var celdaZona = fila.insertCell();
+                            celdaZona.textContent = zona;
+                            var celdaTurno = fila.insertCell();
+                            celdaTurno.textContent = turno;
+                            var celdaNombre = fila.insertCell();
+                            celdaNombre.textContent = registro.nombre;
+                            var celdaEstado = fila.insertCell();
+                            celdaEstado.textContent = registro.estado;
+                        });
+                    }
+                }
+
+                // Agregar la tabla al elemento "dashboard"
+                var dashboardElement = document.getElementById('dashboard');
+                dashboardElement.innerHTML = '';
+                dashboardElement.appendChild(tabla);
+            } else {
+                // Mostrar un mensaje si no hay datos de asistencia
+                document.getElementById('dashboard').textContent = 'No hay datos de asistencia disponibles.';
+            }
+        }
+
+        // Llamar a la función para cargar y mostrar los datos de asistencia
+        mostrarDatosAsistencia();
+    </script>
+</body>
+</html>
